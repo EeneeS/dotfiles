@@ -1,0 +1,2 @@
+command = "tmux a || tmux"
+font-family = "Jetbrains Mono Nerd Font"
