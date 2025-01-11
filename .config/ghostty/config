@@ -1,2 +1,3 @@
 command = "tmux a || tmux"
 font-family = "Jetbrains Mono Nerd Font"
+background-opacity = 0.97
