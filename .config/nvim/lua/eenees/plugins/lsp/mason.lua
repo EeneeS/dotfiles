@@ -30,6 +30,7 @@ return {
         "emmet_ls",
         "clangd",
         "jdtls",
+        "gopls",
       }
     })
   end
