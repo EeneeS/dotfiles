@@ -1,3 +1,10 @@
-command = "tmux a || tmux"
+command = "tmux"
+
+window-decoration = false
+gtk-titlebar = false
+
+theme = catppuccin-mocha
 font-family = "Jetbrains Mono Nerd Font"
-background-opacity = 0.97
+font-size = 20 
+
+background-opacity = 0.9
