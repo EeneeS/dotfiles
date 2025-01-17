@@ -3,7 +3,7 @@ command = "tmux"
 window-decoration = false
 gtk-titlebar = false
 
-theme = catppuccin-mocha
+theme = "Dark Pastel"
 font-family = "Jetbrains Mono Nerd Font"
 font-size = 20 
 
