@@ -2,8 +2,8 @@ vim.g.mapleader = " "
 
 local keymap = vim.keymap
 
--- Select all
--- keymap.set("n", "<C-a>", "ggVG")
+-- Remove highlight with escape key
+-- keymap.set("n", "<Esc>", "<cmd>noh<CR><Esc>", { desc = "Clear search highlight on Esc" })
 
 -- Window management
 keymap.set("n", "<leader>sv", "<C-w>v", { desc = "Split window vertically" })
