@@ -1,3 +1,7 @@
+-- debug
+vim.lsp.set_log_level("debug")
+
+
 vim.cmd("let g:netrw_liststyle =  3")
 
 local opt = vim.opt
@@ -42,32 +46,26 @@ vim.cmd("colorscheme moonfly")
 opt.splitright = true
 opt.splitbelow = true
 
--- Setup autocmd
-vim.api.nvim_create_autocmd("LspAttach", {
-  callback = function(ev)
-    local client = vim.lsp.get_client_by_id(ev.data.client_id)
-    if client:supports_method("textDocument/completion") then
-      vim.lsp.completion.enable(true, client.id, ev.buf, { autotrigger = true })
-    end
-  end,
-})
-
-vim.api.nvim_create_autocmd("CompleteChanged", {
-  callback = function()
-    vim.lsp.buf.hover()
-  end,
-})
-
--- see `:h completeopt`
-vim.opt.completeopt = "menuone,noselect,popup"
--- map <c-space> to activate completion
-vim.keymap.set("i", "<c-space>", function() vim.lsp.completion.get() end)
--- map <cr> to <c-y> when the popup menu is visible
-vim.keymap.set("i", "<cr>", "pumvisible() ? '<c-y>' : '<cr>'", { expr = true })
+-- -- Setup autocmd
+-- vim.api.nvim_create_autocmd('LspAttach', {
+--   callback = function(ev)
+--     local client = vim.lsp.get_client_by_id(ev.data.client_id)
+--     if client:supports_method('textDocument/completion') then
+--       vim.lsp.completion.enable(true, client.id, ev.buf, { autotrigger = true })
+--     end
+--   end,
+-- })
+--
+-- -- see `:h completeopt`
+-- vim.opt.completeopt = "menuone,noinsert,popup"
+-- -- map <c-space> to activate completion
+-- vim.keymap.set("i", "<c-space>", function() vim.lsp.completion.get() end)
+-- -- map <cr> to <c-y> when the popup menu is visible
+-- vim.keymap.set("i", "<cr>", "pumvisible() ? '<c-y>' : '<cr>'", { expr = true })
 
 vim.diagnostic.config({
-  -- signs = false,
-  -- virtual_underline = true,
-  -- underline = true,
+  signs = false,
+  virtual_underline = true,
+  underline = true,
   virtual_lines = true
 })

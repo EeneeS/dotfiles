@@ -18,16 +18,11 @@ return {
           capabilities = capabilities,
         }
 
-        -- add intelephense to blade files
-        if server_name == "intelephense" then
-          opts.filetypes = { "php", "blade" }
-        end
-
         lspconfig[server_name].setup(opts)
       end,
     }
 
     vim.keymap.set("n", "gd", vim.lsp.buf.definition, { desc = "Go to definition" })
-    vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, { desc = "Rename" })
+    -- vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, { desc = "Rename" })
   end,
 }
