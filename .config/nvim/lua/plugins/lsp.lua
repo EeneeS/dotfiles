@@ -1,28 +1,23 @@
 return {
-  "williamboman/mason-lspconfig.nvim",
-  dependencies = {
-    "williamboman/mason.nvim",
+  {
     "neovim/nvim-lspconfig",
-    "saghen/blink.cmp",
-  },
-  config = function()
-    require("mason").setup()
-    require("mason-lspconfig").setup()
-
-    local capabilities = require("blink.cmp").get_lsp_capabilities()
-    local lspconfig = require("lspconfig")
-
-    require("mason-lspconfig").setup_handlers {
-      function(server_name)
-        local opts = {
-          capabilities = capabilities,
-        }
-
-        lspconfig[server_name].setup(opts)
-      end,
-    }
-
-    vim.keymap.set("n", "gd", vim.lsp.buf.definition, { desc = "Go to definition" })
-    -- vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, { desc = "Rename" })
-  end,
+    dependencies = {
+      {
+        "folke/lazydev.nvim",
+        ft = "lua",
+        opts = {
+          library = {
+            { path = "${3rd}/luv/library", words = { "vim%.uv" } }
+          }
+        },
+      }
+    },
+    config = function()
+      local lspconfig = require("lspconfig")
+      lspconfig.lua_ls.setup{}
+      lspconfig.ts_ls.setup{}
+      lspconfig.gopls.setup{}
+      lspconfig.pyright.setup{}
+    end,
+  }
 }

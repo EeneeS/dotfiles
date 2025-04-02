@@ -2,9 +2,6 @@ vim.g.mapleader = " "
 
 local keymap = vim.keymap
 
--- Remove highlight with escape key
--- keymap.set("n", "<Esc>", "<cmd>noh<CR><Esc>", { desc = "Clear search highlight on Esc" })
-
 -- Window management
 keymap.set("n", "<leader>sv", "<C-w>v", { desc = "Split window vertically" })
 keymap.set("n", "<leader>sh", "<C-w>s", { desc = "Split window horizontally" })
@@ -17,3 +14,10 @@ keymap.set("n", "<leader>tx", "<cmd>tabclose<CR>", { desc = "Close current tab" 
 keymap.set("n", "<leader>tn", "<cmd>tabn<CR>", { desc = "Go to next tab" })
 keymap.set("n", "<leader>tp", "<cmd>tabp<CR>", { desc = "Go to prev tab" })
 keymap.set("n", "<leader>tf", "<cmd>tabnew %<CR>", { desc = "Open current buffer in new tab" })
+
+-- map <c-space> to activate completion
+vim.keymap.set("i", "<c-space>", function() vim.lsp.completion.get() end)
+-- map <cr> to <c-y> when the popup menu is visible
+vim.keymap.set("i", "<cr>", "pumvisible() ? '<c-y>' : '<cr>'", { expr = true })
+
+vim.keymap.set("n", "gd", vim.lsp.buf.definition, { desc = "Go to definition" })
