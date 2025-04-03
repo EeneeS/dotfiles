@@ -31,18 +31,18 @@ vim.opt.clipboard = "unnamedplus"
 opt.splitright = true
 opt.splitbelow = true
 
-vim.api.nvim_create_autocmd('TextChangedI', {
-  callback = function()
-    local line = vim.api.nvim_get_current_line()
-    local col = vim.api.nvim_win_get_cursor(0)[2] + 1
-    if col > 0 then
-      local char = line:sub(col - 1, col - 1)
-      if char:match('%a') then
-        vim.lsp.completion.get()
-      end
-    end
-  end,
-})
+-- vim.api.nvim_create_autocmd('TextChangedI', {
+--   callback = function()
+--     local line = vim.api.nvim_get_current_line()
+--     local col = vim.api.nvim_win_get_cursor(0)[2] + 1
+--     if col > 0 then
+--       local char = line:sub(col - 1, col - 1)
+--       if char:match('%a') then
+--         vim.lsp.completion.get()
+--       end
+--     end
+--   end,
+-- })
 
 vim.api.nvim_create_autocmd('LspAttach', {
   callback = function(ev)
