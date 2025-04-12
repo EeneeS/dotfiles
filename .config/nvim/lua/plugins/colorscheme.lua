@@ -1,8 +1,20 @@
+-- return {
+--   "bluz71/vim-moonfly-colors",
+--   lazy = false,
+--   config = function()
+--     vim.cmd("colorscheme moonfly")
+--   end,
+--   priority = 1000
+-- }
+--
+
 return {
-  "bluz71/vim-moonfly-colors",
+  "folke/tokyonight.nvim",
   lazy = false,
+  priority = 1000,
   config = function()
-    vim.cmd("colorscheme moonfly")
+    -- vim.cmd("colorscheme tokyonight")
+    vim.cmd("colorscheme zaibatsu")
   end,
-  priority = 1000
+  opts = {},
 }
