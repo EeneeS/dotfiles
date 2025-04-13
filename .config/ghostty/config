@@ -21,6 +21,7 @@
 # # separated by equals signs.
 theme = Adventure
 font-family = Iosevka Nerd Font
+# font-family = JetBrainsMono
 font-size = 18
 window-padding-x = 0
 window-padding-y = 0
