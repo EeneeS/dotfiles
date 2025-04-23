@@ -31,32 +31,6 @@ vim.opt.clipboard = "unnamedplus"
 opt.splitright = true
 opt.splitbelow = true
 
--- vim.api.nvim_create_autocmd('TextChangedI', {
---   callback = function()
---     local line = vim.api.nvim_get_current_line()
---     local col = vim.api.nvim_win_get_cursor(0)[2] + 1
---     if col > 0 then
---       local char = line:sub(col - 1, col - 1)
---       if char:match('%a') then
---         vim.lsp.completion.get()
---       end
---     end
---   end,
--- })
-
--- vim.api.nvim_create_autocmd('LspAttach', {
---   callback = function(ev)
---     local client = vim.lsp.get_client_by_id(ev.data.client_id)
---     ---@diagnostic disable-next-line: need-check-nil
---     if client:supports_method('textDocument/completion') then
---       ---@diagnostic disable-next-line: need-check-nil
---       vim.lsp.completion.enable(true, client.id, ev.buf, { autotrigger = true })
---     end
---   end,
--- })
-
--- vim.opt.completeopt = "menuone,noinsert,popup"
-
 vim.diagnostic.config({
   signs = true,
   virtual_underline = true,
