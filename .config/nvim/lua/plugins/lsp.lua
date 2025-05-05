@@ -19,6 +19,7 @@ return {
       lspconfig.gopls.setup{}
       lspconfig.pyright.setup{}
       lspconfig.tailwindcss.setup{}
+      lspconfig.cssls.setup{}
     end,
   }
 }
