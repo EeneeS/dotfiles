@@ -1,6 +1,7 @@
 gtk-titlebar = false
 window-decoration = server
 
+font-family = IoskeleyMonoNL Nerd Font
 font-size = 14
 
 clipboard-trim-trailing-spaces = true
